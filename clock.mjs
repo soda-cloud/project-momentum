@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export function time(){
     const main = document.querySelector('.clock')
     const percent = document.querySelector('.clock-persent')
@@ -59,3 +60,29 @@ export function time(){
 
 
 };
+=======
+// HTML 불러오기
+// 시계
+const clockContainer = document.querySelector('.js-clock');
+const clockTitle = clockContainer.querySelector('h1');
+
+// js 기능 구성
+// 시계
+function getTime() {
+  const date = new Date();
+  const minutes = date.getMinutes();
+  const hours = date.getHours();
+  const seconds = date.getSeconds();
+  clockTitle.innerHTML =
+    `${hours < 10 ? `0${hours}` : `${hours}`}:` +
+    `${minutes < 10 ? `0${minutes}` : minutes}:` +
+    `${seconds < 10 ? `0${seconds}` : seconds}`;
+}
+
+// clock 초기화
+// eslint-disable-next-line import/prefer-default-export
+export function init() {
+  getTime();
+  setInterval(getTime, 1000);
+}
+>>>>>>> d0eb6d95984c3cc3084d6c9fbbda7f9ec0d62850
